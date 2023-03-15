@@ -1,0 +1,230 @@
+from turtle import*
+from random import*
+
+count=0
+a=0
+b=0
+v=0
+g=0
+d=0
+yo=0
+i=0
+yos=0
+ab=0
+
+speed(100)
+
+fd(100)
+backward(150)
+up()
+right(90)
+fd(50)
+left(90)
+down()
+fd(150)
+backward(50)
+right(90)
+fd(50)
+backward(150)
+fd(50)
+right(90)
+fd(50)
+right(90)
+fd(50)
+backward(150)
+left(90)
+
+def win (x,y):
+    if (a==1) and (b==1) and (v==1):
+        print("крестики выиграли")
+
+    elif (g==1) and (d==1) and (yo==1):
+        print("крестики выиграли")
+
+    elif (i==1) and (yos==1) and (ab==1):
+        print("крестики выиграли")
+
+    elif (d==1) and (v==1) and (yos==1):
+        print("крестики выиграли")
+
+    elif (g==1) and (a==1) and (i==1):
+        print("крестики выиграли")
+
+    elif (yo==1) and (b==1) and (ab==1):
+        print("крестики выиграли")
+
+    elif (d==1) and (a==1) and (ab==1):
+        print("крестики выиграли")
+
+    elif (yo==1) and (a==1) and (yos==1):
+        print("крестики выиграли")
+
+
+
+
+    elif (a==2) and (b==2) and (v==2):
+        print("нолики выиграли")
+
+    elif (g==2) and (d==2) and (yo==2):
+        print("нолики выиграли")
+
+    elif (i==2) and (yos==2) and (ab==2):
+        print("нолики выиграли")
+
+    elif (d==2) and (v==2) and (yos==2):
+        print("нолики выиграли")
+
+    elif (g==2) and (a==2) and (i==2):
+        print("нолики выиграли")
+
+    elif (yo==2) and (b==2) and (ab==2):
+        print("нолики выиграли")
+
+    elif (d==2) and (a==2) and (ab==2):
+        print("нолики выиграли")
+
+    elif (yo==2) and (a==2) and (yos==2):
+        print("нолики выиграли")
+
+    elif (count==9):
+        print("ничья")
+
+
+
+
+def kletka (x,y):
+    global count
+    global a
+    global b
+    global v
+    global g
+    global d
+    global yo
+    global i
+    global yos
+    global ab
+
+    count+=1
+
+#5    
+    if (x>0) and (x<50) and (y<0) and (y>-50) and (a==0):
+        up()
+        goto(25,0)
+        down()
+        e(x,y)
+        if (count==1) or (count==3) or (count==5) or (count==7) or (count==9):
+            a+=1
+        else:
+            a+=2
+        
+#6
+    if (x>50) and (x<100) and (y<0) and (y>-50) and (b==0):
+        up()
+        goto(75,0)
+        down()
+        e(x,y)
+        if (count==1) or (count==3) or (count==5) or (count==7) or (count==9):
+            b+=1
+        else:
+            b+=2
+#4
+    if (x<0) and (x>-50) and (y<0) and (y>-50) and (v==0):
+        up()
+        goto(-25,0)
+        down()
+        e(x,y)
+        if (count==1) or (count==3) or (count==5) or (count==7) or (count==9):
+            v+=1
+        else:
+            v+=2
+#2
+    if (x>0) and (x<50) and (y>0) and (y<50) and (g==0):
+        up()
+        goto(25,50)
+        down()
+        e(x,y)
+        if (count==1) or (count==3) or (count==5) or (count==7) or (count==9):
+            g+=1
+        else:
+            g+=2
+#1
+    if (x<0) and (x>-50) and (y>0) and (y<50) and (d==0):
+        up()
+        goto(-25,50)
+        down()
+        e(x,y)
+        if (count==1) or (count==3) or (count==5) or (count==7) or (count==9):
+            d+=1
+        else:
+            d+=2
+#3
+    if (x>50) and (x<100) and (y>0) and (y<50) and (yo==0):
+        up()
+        goto(75,50)
+        down()
+        e(x,y)
+        if (count==1) or (count==3) or (count==5) or (count==7) or (count==9):
+            yo+=1
+        else:
+            yo+=2
+#8
+    if (x>0) and (x<50) and (y<-50) and (y>-100) and (i==0):
+        up()
+        goto(25,-50)
+        down()
+        e(x,y)
+        if (count==1) or (count==3) or (count==5) or (count==7) or (count==9):
+            i+=1
+        else:
+            i+=2
+        
+#7
+    if (x<0) and (x>-50) and (y<-50) and (y>-100) and (yos==0):
+        up()
+        goto(-25,-50)
+        down()
+        e(x,y)
+        if (count==1) or (count==3) or (count==5) or (count==7) or (count==9):
+            yos+=1
+        else:
+            yos+=2
+#9
+    if (x>50) and (x<100) and (y<-50) and (y>-100) and (ab==0):
+        up()
+        goto(75,-50)
+        down()
+        e(x,y)
+        if (count==1) or (count==3) or (count==5) or (count==7) or (count==9):
+            ab+=1
+        else:
+            ab+=2
+
+    win(x,y)
+    
+        
+def e (x,y):      
+    if count==1 or count==3 or count ==5 or count==7 or count ==9:
+        left(90)
+        up()        
+        fd(25)
+        down()
+        left(45)
+        for i in range(4):
+            fd(25)
+            backward(25)
+            left(90)
+        right(45)
+        up()
+        backward(25)
+        down()
+        right(90)
+    else:
+        left(90)
+        up()
+        fd(5)
+        down()
+        right(90)
+        circle(20)
+
+onscreenclick(kletka)
+
