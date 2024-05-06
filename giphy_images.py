@@ -1,7 +1,7 @@
 import requests
 
 def search_gifs(query):
-    api_key = 'YOUR_GIPHY_API_KEY'  # Replace with your actual Giphy API key
+    api_key = 'YOUR_GIPHY_API_KEY'  # Replace with my actual Giphy API key - in progress 
     url = 'https://api.giphy.com/v1/gifs/search'
     params = {
         'api_key': api_key,
